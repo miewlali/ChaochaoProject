@@ -1,0 +1,104 @@
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+  body {font-family: "Open Sans"}
+</style>
+<body class="w3-light-grey">
+
+<!-- Navigation bar with social media icons -->
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="#" class="w3-bar-item w3-button"><i>ChaoChao</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-right"><i>register</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-right"><i>login</i></a>
+
+</div>
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>ChaoChao</b></h1>
+    <h6>Welcome to renting world<span class="w3-tag"> ChaoChao's world</span></h6>
+  </header>
+
+<body>
+  <div class="w3-container w3-white w3-margin w3-padding-large">
+    <div class="w3-center">
+      <br /><h3>Registration Form</h3>
+    </div>
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="register">
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row w3-padding-32">
+          <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label"><strong>Full Name</strong></label>
+            <div class="col-sm-9">
+              <input type="text" id="firstName" placeholder="Full Name" class="w3-input w3-border" autofocus>
+              <span class="w3-opacity"><i>Last Name, First Name, eg.: Smith, Harry</i></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-3 control-label"><strong>Email</strong></label>
+            <div class="col-sm-9">
+              <input type="email" id="email" placeholder="Email" class="w3-input w3-border">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="username" class="col-sm-3 control-label"><strong>Username</strong></label>
+            <div class="col-sm-9">
+              <input type="text" id="username" placeholder="Username" class="w3-input w3-border">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-sm-3 control-label"><strong>Password</strong></label>
+            <div class="col-sm-9">
+              <input type="password" id="password" placeholder="Password" class="w3-input w3-border">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label"><strong>Date of Birth</strong></label>
+            <div class="col-sm-9">
+              <input type="date" id="birthDate" class="w3-input w3-border">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address" class="col-sm-3 control-label"><strong>Address</strong></label>
+            <div class="col-sm-9">
+              <input type="text" id="address" class="w3-input w3-border">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3"><strong>Gender</strong></label>
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-4">
+                  <lable class = "radio-inline">
+                  <input type="radio" name="type" value="customer" checked><strong> Customer</strong>
+                </div>
+                <div class="col-sm-4">
+                  <lable class = "radio-inline">
+                    <input type="radio" name="type" value="merchant"><strong> Merchant</strong>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-offset-3">
+          <p class="w3-center"><button type="submit" button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
