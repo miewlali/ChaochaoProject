@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2017 at 03:54 PM
+-- Generation Time: May 21, 2017 at 06:11 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -27,14 +27,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `member` (
+  `userid` int(11) NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
   `name` text NOT NULL,
   `email` text NOT NULL,
-  `type` tinyint(1) NOT NULL,
-  `dateofbirth` date NOT NULL,
+  `type` text NOT NULL,
   `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`userid`, `username`, `password`, `name`, `email`, `type`, `address`) VALUES
+(8, 'natap', '1234', 'Pattaranit Keerati', 'nat@hotmail.com', 'customer', 'bankok');
 
 -- --------------------------------------------------------
 
@@ -58,7 +65,7 @@ CREATE TABLE `product` (
 -- Indexes for table `member`
 --
 ALTER TABLE `member`
-  ADD PRIMARY KEY (`username`(8)),
+  ADD PRIMARY KEY (`userid`),
   ADD UNIQUE KEY `password` (`password`(8));
 
 --
@@ -71,6 +78,11 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `product`
 --
