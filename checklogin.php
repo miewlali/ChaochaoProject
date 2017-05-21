@@ -19,16 +19,16 @@ echo ($_REQUEST['userid']);
                   $password = ($_REQUEST['password']);
 
 				//query
-                  $sqlM="SELECT * FROM member WHERE userid='$userid' AND password='$password'AND type='merchant' ";
-                  $sqlC="SELECT * FROM member WHERE userid='$userid' AND password='$password'AND type='customer' ";
+                  $sqlM="SELECT * FROM member WHERE userid='$userid' AND password='$password' AND type ='merchant'";
+                  $sqlC="SELECT * FROM member WHERE userid='$userid' AND password='$password' AND type = 'customer'";
 
 
-                  $resultM = mysqli_query($con,$sql);
-                  $resultC = mysqli_query($con,$sqlT);
+                  $resultM = mysqli_query($con,$sqlM);
+                  $resultC = mysqli_query($con,$sqlC);
 
-                  if(mysqli_num_rows($resulM)==1){
+                  if(mysqli_num_rows($resultM)==1){
 
-                      $row = mysqli_fetch_array($result);
+                      $row = mysqli_fetch_array($resultM);
 
                       $_SESSION["userid"] = $row["userid"];
                       $_SESSION["username"] = $row["username"];
@@ -40,7 +40,7 @@ echo ($_REQUEST['userid']);
 
 
 
-                      Header("Location: http://localhost/chaochaome/mainPage-member.html");
+                      Header("Location: http://localhost/ChaoChaoProject/mainPage-member.html");
                       //Header("Location: http://localhost/homePage/studentProfile.php");
 
 
@@ -56,7 +56,7 @@ echo ($_REQUEST['userid']);
 
                     $_SESSION["userid"] = $rowc["userid"];
 
-                    Header("Location: http://localhost/chaochaome/mainPage-member.html");
+                    Header("Location: http://localhost/ChaoChaoProject/mainPage-member.html");
 
                   }
                   else{
@@ -68,6 +68,6 @@ echo ($_REQUEST['userid']);
                   }
 
         }else{
-             Header("Location: http://localhost/chaochaome/mainPage-member.html"); //user & password incorrect back to login again
+             Header("Location: http://localhost/ChaoChaoProject/mainPage-member.html"); //user & password incorrect back to login again
         }
 ?>
