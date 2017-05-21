@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2017 at 06:11 PM
+-- Generation Time: May 21, 2017 at 11:00 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -41,7 +41,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`userid`, `username`, `password`, `name`, `email`, `type`, `address`) VALUES
-(8, 'natap', '1234', 'Pattaranit Keerati', 'nat@hotmail.com', 'customer', 'bankok');
+(8, 'natap', '1234', 'Pattaranit Keerati', 'nat@hotmail.com', 'customer', 'bankok'),
+(9, 'anatomean', '11111', 'Mean', 'mean@hotmail.com', 'merchant', 'UK');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `product`
 --
