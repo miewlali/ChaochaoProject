@@ -206,54 +206,7 @@ and is wrapped around the whole page content, except for the footer in this exam
           <h4>Recent Review</h4>
         </div>
         <ul class="w3-ul w3-hoverable w3-white">
-          <li class="w3-padding-16">
-            <div>
-				<img src="/w3images/avatar_smoke.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-				<h4>mamiew <span class="w3-opacity w3-medium">April 10, 2017, 7:22 PM</span></h4>
-			</div>
-			<br>
-            <div>
-				<img src="http://localhost/ChaoChaoProject/pic/star-4.png" alt="Image" class="w3-left w3-margin-right" style="height:20px">
-				<br>
-				<p>So beatiful.</p>
-			</div>
-          </li>
-          <li class="w3-padding-16">
-            <div>
-				<img src="/w3images/avatar_smoke.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-				<h4>mmminorrr <span class="w3-opacity w3-medium">April 21, 2017, 10:12 AM</span></h4>
-			</div>
-			<br>
-            <div>
-				<img src="http://localhost/ChaoChaoProject/pic/star-4.png" alt="Image" class="w3-left w3-margin-right" style="height:20px">
-				<br>
-				<p>Awesome.</p>
-			</div>
-          </li>
-          <li class="w3-padding-16">
-            <div>
-				<img src="/w3images/avatar_smoke.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-				<h4>pattaranit <span class="w3-opacity w3-medium">May 2, 2017, 16:12 PM</span></h4>
-			</div>
-			<br>
-            <div>
-				<img src="http://localhost/ChaoChaoProject/pic/star-5.png" alt="Image" class="w3-left w3-margin-right" style="height:20px">
-				<br>
-				<p>Nice.</p>
-			</div>
-          </li>
-          <li class="w3-padding-16">
-            <div>
-				<img src="/w3images/avatar_smoke.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-				<h4>anatomean <span class="w3-opacity w3-medium">May 5, 2017, 8:02 PM</span></h4>
-			</div>
-			<br>
-            <div>
-				<img src="http://localhost/ChaoChaoProject/pic/star-5.png" alt="Image" class="w3-left w3-margin-right" style="height:20px">
-				<br>
-				<p>Good.</p>
-			</div>
-          </li>
+          <div id="review"></div>
         </ul>
       </div>
       <hr>
@@ -395,13 +348,14 @@ and is wrapped around the whole page content, except for the footer in this exam
 			{
 				var arr = JSON.parse(response);
 				var i;
-				var out = "";
+				var out = "<li class='w3-padding-16'>"+
+					"<div><img src='/w3images/avatar_smoke.jpg' alt='Image' class='w3-left w3-margin-right' style='width:50px'>";
 
 				for(i = 0; i < arr.length; i++)
 				{
-					out += "<option value=\'" + arr[i].username + "\'>" + arr[i].time + "\'>" + arr[i].src + "\'>" + arr[i].comment + "</option>";
+					out += "<h4>" + arr[i].username + "<span class='w3-opacity w3-medium'>" + arr[i].time + "</span></h4></div><br><div><img src=\"" + arr[i].src + "\" alt='Image' class='w3-left w3-margin-right' style='height:20px'><br><p>" + arr[i].comment + "</p>";
 				}
-				out += "</select>";
+				out += "</li>";
 				document.getElementById("review").innerHTML = out;
 			}
 
