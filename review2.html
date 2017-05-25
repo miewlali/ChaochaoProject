@@ -247,16 +247,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 			</div>
           </li>
           <li class="w3-padding-16">
-            <div>
-				<img src="http://localhost/ChaoChaoProject/pic/pmean.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-				<h4>anatomean <span class="w3-opacity w3-medium">May 5, 2017, 8:02 PM</span></h4>
-			</div>
+            <div id="ident"></div>
 			<br>
-            <div>
-				<img src="http://localhost/ChaoChaoProject/pic/star-5.png" alt="Image" class="w3-left w3-margin-right" style="height:20px">
-				<br>
-				<p>Good.</p>
-			</div>
+            <div id="comment"></div>
           </li>
         </ul>
       </div>
@@ -352,7 +345,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey" style="padding:32px">
   <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <!-- ><p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p> <-->
 </footer>
 
 <script>
@@ -399,14 +391,20 @@ and is wrapped around the whole page content, except for the footer in this exam
 			{
 				var arr = JSON.parse(response);
 				var i;
-				var out = "";
+				var out = '';
+				var out2 = '';
 
 				for(i = 0; i < arr.length; i++)
 				{
-					out += "<option value=\'" + arr[i].username + "\'>" + arr[i].time + "\'>" + arr[i].src + "\'>" + arr[i].comment + "</option>";
+					out += '<img src=' +arr[i].imgprof + 'alt="Image" class="w3-left w3-margin-right" style="width:50px"><h4>'+ arr[i].username+ '<span class="w3-opacity w3-medium">'+arr[i].time+ '</span>';
+					out2 += '<img src='+ arr[i].star +'alt="Image" class="w3-left w3-margin-right" style="height:20px"><br><p>'+arr[i].comment;
 				}
-				out += "</select>";
-				document.getElementById("review").innerHTML = out;
+				out += '</h4>';
+				out2 += '</p>';
+				
+				
+				document.getElementById("ident").innerHTML = out;
+				document.getElementById("comment").innerHTML = out2;
 			}
 
 }

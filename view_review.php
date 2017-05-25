@@ -4,8 +4,8 @@
 
 	$conn = new mysqli("127.0.0.1", "root", "", "chaochao");
 	
-	$result = $conn->query("SELECT s.src, m.username, r.timestamp, r.comment FROM review r, member m, star s WHERE r.productid=39 AND r.userid=m.userid AND r.star=s.level");
-	
+	//$result = $conn->query("SELECT m.imgsrc, s.src, m.username, r.timestamp, r.comment FROM review r, member m, star s WHERE r.productid=39 AND r.userid=m.userid AND r.star=s.level");
+	$result = $conn->query("SELECT m.imgsrc, s.src, m.username, r.timestamp, r.comment FROM review r, member m, star s WHERE r.productid=39 GROUP BY r.productid ");
 	$out = "[";
 	while($rs = $result->fetch_array(MYSQLI_ASSOC))
 	{
@@ -13,7 +13,8 @@
 		{
 			$out .= ",";
 		}
-		$out .= '{"username":"'	. $rs["username"]	. '",';
+		$out .= '{"imgprof":"'	. $rs["imgsrc"]		. '",';
+		$out .= '"username":"'	. $rs["username"]	. '",';
 		$out .= '"time":"'		. $rs["timestamp"]	. '",';
 		$out .= '"star":"'		. $rs["src"]		. '",';
 		$out .= '"comment":"'	. $rs["comment"]	. '"}';

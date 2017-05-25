@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2017 at 09:50 PM
+-- Generation Time: May 25, 2017 at 06:31 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -33,86 +33,19 @@ CREATE TABLE `member` (
   `name` text NOT NULL,
   `email` text NOT NULL,
   `type` text NOT NULL,
-  `address` text NOT NULL
+  `address` text NOT NULL,
+  `imgsrc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`userid`, `username`, `password`, `name`, `email`, `type`, `address`) VALUES
-(8, 'natap', '1234', 'Pattaranit Keerati', 'nat@hotmail.com', 'customer', 'bankok'),
-(9, 'anatomean', '11111', 'Mean', 'mean@hotmail.com', 'merchant', 'UK'),
-(10, 'mamieww', '1111', '-', '-', '-', '-'),
-(11, 'mmminorrr', '2222', '-', '-', '-', '-'),
-(12, 'anatomean', '3333', '-', '-', '-', '-');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `product`
---
-
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `detail` text NOT NULL,
-  `price` int(11) NOT NULL,
-  `image` blob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`id`, `name`, `detail`, `price`, `image`) VALUES
-(39, 'pink coat', '-', 300, '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `review`
---
-
-CREATE TABLE `review` (
-  `comment` text NOT NULL,
-  `star` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `productid` int(11) NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `review`
---
-
-INSERT INTO `review` (`comment`, `star`, `userid`, `productid`, `timestamp`) VALUES
-('Nice.', 4, 8, 39, '2017-05-24 19:03:29'),
-('So beatiful.', 4, 10, 39, '2017-05-24 19:03:29'),
-('Awesome.', 5, 11, 39, '2017-05-24 19:03:29'),
-('Good.', 5, 12, 39, '2017-05-24 19:03:29');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `star`
---
-
-CREATE TABLE `star` (
-  `src` tinytext NOT NULL,
-  `level` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `star`
---
-
-INSERT INTO `star` (`src`, `level`) VALUES
-('http://localhost/ChaoChaoProject/pic/star-0.png', 0),
-('http://localhost/ChaoChaoProject/pic/star-1.png', 1),
-('http://localhost/ChaoChaoProject/pic/star-3.png', 3),
-('http://localhost/ChaoChaoProject/pic/star-4.png', 4),
-('http://localhost/ChaoChaoProject/pic/star-5.png', 5);
+INSERT INTO `member` (`userid`, `username`, `password`, `name`, `email`, `type`, `address`, `imgsrc`) VALUES
+(8, 'natap', '1234', 'Pattaranit Keerati', 'nat@hotmail.com', 'customer', 'bankok', 'http://localhost/ChaoChaoProject/pic/natPic.jpg'),
+(9, 'anatomean', '1212', 'Mean', 'mean@hotmail.com', 'merchant', 'UK', 'http://localhost/ChaoChaoProject/pic/pmean.jpg'),
+(10, 'mamieww', '1111', '-', '-', '-', '-', 'http://localhost/ChaoChaoProject/pic/miew.jpg'),
+(11, 'mmminorrr', '2222', '-', '-', '-', '-', 'http://localhost/ChaoChaoProject/pic/minor.jpg');
 
 --
 -- Indexes for dumped tables
@@ -126,24 +59,6 @@ ALTER TABLE `member`
   ADD UNIQUE KEY `password` (`password`(8));
 
 --
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `review`
---
-ALTER TABLE `review`
-  ADD PRIMARY KEY (`userid`);
-
---
--- Indexes for table `star`
---
-ALTER TABLE `star`
-  ADD PRIMARY KEY (`level`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -152,11 +67,6 @@ ALTER TABLE `star`
 --
 ALTER TABLE `member`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
